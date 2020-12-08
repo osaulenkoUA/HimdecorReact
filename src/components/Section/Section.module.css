@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'roboto';
+  font-style: normal;
+  src: url('./roboto-v20-latin-regular.ttf');
+}
+
+.container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content 1fr min-content;
+  font-family: 'roboto';
+  width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
