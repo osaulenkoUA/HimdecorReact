@@ -7,7 +7,7 @@ function Header() {
 	return (
 		<div className={s.container}>
 			<Logo />
-			<Navigation />
+			<Navigation menu='header'  />
 		</div>
 	);
 }

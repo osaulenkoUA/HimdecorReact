@@ -6,3 +6,6 @@
   text-transform: uppercase;
   /* justify-content: center; */
 }
+.nav:hover{
+  color: blue;
+}

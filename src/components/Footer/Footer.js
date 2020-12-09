@@ -1,13 +1,15 @@
 import React from 'react';
 import Navigation from '../Navigation/Navigation.js';
-import Social from '../Social/Social.js'
+import Social from '../Social/Social.js';
 
-import s from './Footer.module.css'
+import s from './Footer.module.css';
 function Header() {
 	return (
 		<div className={s.container}>
-			<Navigation />
-			<Social/>
+			<div className={s.footer}>
+				<Navigation menu="footer" />
+				<Social />
+			</div>
 		</div>
 	);
 }

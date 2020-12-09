@@ -1,11 +1,12 @@
-.title{
-    color: rgb(53, 53, 134);
-    font-size: 16px;
-    font-weight: 600;
-}
-/* .wrapper{ */
-    /* margin-right: auto; */
-    /* text-align: right;
-    margin-right: 20px;
-} */
 
+.wrapper{ 
+    display: grid;
+    grid-template-columns: min-content min-content min-content max-content;
+    grid-column-gap: 20px;
+    align-items: center;
+    
+}
+
+.wrap__text{
+    color:white;
+}

@@ -1,9 +1,9 @@
 .svgLightTheme {
-  fill: #000000;
+  fill: #ffffff;
   width: 25px;
   height: 25px;
 }
 
 .svgLightTheme:hover {
-  fill: #ff0000;
+  fill: #ffffff;
 }

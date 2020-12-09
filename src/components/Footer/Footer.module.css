@@ -1,7 +1,14 @@
 .container {
+	/* width: 100vw; */
+	margin: 0 auto;
+	background-color: rgb(0, 0, 0);
+
+}
+.footer{
+	margin: 0 auto;
+	width: 1280px;
 	display: grid;
 	grid-template-columns: 1fr max-content;
 	grid-column-gap: 35px;
 	align-self: end;
-	background-color: rgb(0, 0, 0);
 }

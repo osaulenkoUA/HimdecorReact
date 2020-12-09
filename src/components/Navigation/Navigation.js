@@ -5,7 +5,7 @@ import s from './Navigation.module.css';
 import styles from './NavigationStyle.js';
 import routes from '../../routes.js';
 
-const Navigation = () => {
+const Navigation = ({menu}) => {
 	return (
 		<nav className={s.list}>
 			{routes.map((route) => (
@@ -13,8 +13,9 @@ const Navigation = () => {
 					exact={route.exact}
 					key={route.label}
 					to={route.path}
-					style={styles.link}
-					activeStyle={styles.activeLink}
+					style={menu==='footer'?styles.footer.link:styles.header.link}
+					activeStyle={styles.header.activeLink}
+					className={s.nav}
 				>
 					{route.label}
 				</NavLink>
