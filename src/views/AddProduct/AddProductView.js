@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import articlesOperation from '../../redux/articles/articlesOperation.js';
+import productsOperation from '../../redux/products/productsOperation';
 
 import s from './AddProduct.module.css';
 
@@ -22,9 +22,7 @@ function AddArticle() {
 
   const dispatch = useDispatch();
 
-  // const updateEmail = ({ target }) => setTitle(target.value);
-  // const updatePassword = ({ target }) => setArticle(target.value);
-  const updateUrlImage = ({ target }) => setUrlImage(target.value);
+  
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -44,7 +42,7 @@ function AddArticle() {
       buyUrl,
     };
     console.log(obj);
-    // dispatch(articlesOperation.addArticle(obj));
+    dispatch(productsOperation.addProduct(obj));
   }
 
   return (
@@ -142,7 +140,7 @@ function AddArticle() {
                 className={s.form__input}
                 type="text"
                 value={urlImage}
-                onChange={updateUrlImage}
+                onChange={e => setUrlImage(e.target.value)}
                 name="password"
               />
             </label>
