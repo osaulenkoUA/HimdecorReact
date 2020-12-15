@@ -6,10 +6,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import productsOperation from '../redux/products/productsOperation.js';
 import routes from '../routes.js';
 import Section from './Section/Section.js';
-
+import GroupItem from './GroupItem/GroupItem.js';
 function App() {
-
-	const dispatch=useDispatch();
+	const dispatch = useDispatch();
 
 	useEffect(() => {
 		dispatch(productsOperation.getProduct());
@@ -22,6 +21,7 @@ function App() {
 						{routes.map((route) => (
 							<Route key={route.path} {...route} />
 						))}
+						<Route path="/uk/shop/:id" component={GroupItem} />
 					</Switch>
 				</Suspense>
 			</Section>

@@ -11,7 +11,9 @@ export default [
     path: '/uk/shop',
     label: 'продукція',
     exact: true,
-    component: lazy(() => import('./views/Products/ProductsView.js')),
+    // component: lazy(() => import('./views/Products/ProductsView.js')),
+    component: lazy(() => import('./components/GroupProduct/GroupProduct')),
+
   },
   {
     path: '/price',
