@@ -1,0 +1,44 @@
+.aside {
+    width: 1280px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .aside__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  
+  }
+  .aside_item {
+    padding: 4px;
+  }
+  
+  .itemLink {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000;
+  }
+  .aside__list {
+    display: inline-block;
+    /* border: none; */
+    text-align: left;
+  }
+
+  .aside_item {
+    padding-bottom: 25px;
+  }
+  .itemLink {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.154;
+  }
+  .aside_item:hover {
+    background-color: #fff;
+  }
+  .itemLink:hover {
+    color: rgb(113, 179, 43);
+  }
+  
