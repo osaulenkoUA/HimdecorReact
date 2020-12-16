@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link,Route } from 'react-router-dom';
+import GroupItem from '../GroupItem/GroupItem.js';
 
 const groupList = [
 	{
@@ -37,9 +38,10 @@ const groupList = [
 ];
 
 const GroupProduct = ({match}) => {
+
+	console.log('GP',match);
 	return (
 		<div>
-			<h1>Продукція</h1>
             <ul>
                 {groupList.map(item=>(
                     <li key={item.id}>
@@ -49,6 +51,8 @@ const GroupProduct = ({match}) => {
                     </li>
                 ))}
             </ul>
+			<Route path={`${match.path}/:id`} component={GroupItem} />
+
 		</div>
 	);
 };

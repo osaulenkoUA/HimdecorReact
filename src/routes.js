@@ -10,7 +10,7 @@ export default [
   {
     path: '/uk/shop',
     label: 'продукція',
-    exact: true,
+    exact: false,
     // component: lazy(() => import('./views/Products/ProductsView.js')),
     component: lazy(() => import('./components/GroupProduct/GroupProduct')),
 

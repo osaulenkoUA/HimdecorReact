@@ -8,7 +8,6 @@ function AddArticle() {
   const [group, setGroup] = useState('');
   const [name, setName] = useState('');
   const [fasovka, setFasovka] = useState('');
-
   const [sklad, setSklad] = useState('');
   const [time, setTime] = useState('');
   const [vutratu, setVutratu] = useState('');
@@ -17,12 +16,11 @@ function AddArticle() {
   const [vlastuvosti, setVlastuvosti] = useState('');
   const [pidgotovka, setPidgotovka] = useState('');
   const [nanesennya, setNanesennya] = useState('');
-  const [urlImage, setUrlImage] = useState('');
-  const [buyUrl, setBuyUrl] = useState('');
+  const [urlimage, setUrlImage] = useState('');
+  const [buyurl, setBuyUrl] = useState('');
+  const [matchurl, setMatchurlUrl] = useState('');
 
   const dispatch = useDispatch();
-
-  
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -38,8 +36,9 @@ function AddArticle() {
       vlastuvosti,
       pidgotovka,
       nanesennya,
-      urlImage,
-      buyUrl,
+      urlimage,
+      buyurl,
+      matchurl
     };
     console.log(obj);
     dispatch(productsOperation.addProduct(obj));
@@ -53,14 +52,14 @@ function AddArticle() {
           <form onSubmit={handleSubmit} className={s.form}>
             <select name="group" onChange={e => setGroup(e.target.value)}>
               <option value="0">Вибрати ГРУПУ:</option>
-              <option value="1">КЛЕй</option>
-              <option value="2">Інтерїєрні фарби</option>
-              <option value="3">Фасадні фарби</option>
-              <option value="4">Грунтовки</option>
-              <option value="5">Декоративні та по дереву</option>
-              <option value="6">Лаки та лазурі</option>
-              <option value="7">Шпаклівка</option>
-              <option value="8">Штукатурка </option>
+              <option value="клей-пва">клей-пва</option>
+              <option value="інтерєрні-фарби">інтерєрні-фарби</option>
+              <option value="фасадні-фарби">фасадні-фарби</option>
+              <option value="грунтівка">грунтівка</option>
+              <option value="декоративні-фарби">декоративні-фарби</option>
+              <option value="лаки-акрилові">лаки-акрилові</option>
+              <option value="шпатлівки-по-дереву">шпатлівки-по-дереву</option>
+              <option value="декоративні-штукатурки">декоративні-штукатурки</option>
             </select>
 
             <label className={s.form__label}>
@@ -139,7 +138,7 @@ function AddArticle() {
               <input
                 className={s.form__input}
                 type="text"
-                value={urlImage}
+                value={urlimage}
                 onChange={e => setUrlImage(e.target.value)}
                 name="password"
               />
@@ -172,8 +171,18 @@ function AddArticle() {
               <input
                 className={s.form__input}
                 type="text"
-                value={buyUrl}
+                value={buyurl}
                 onChange={e => setBuyUrl(e.target.value)}
+                name="buyUrl"
+              />
+            </label>
+            <label className={s.form__label}>
+             Match URL:
+              <input
+                className={s.form__input}
+                type="text"
+                value={matchurl}
+                onChange={e => setMatchurlUrl(e.target.value)}
                 name="buyUrl"
               />
             </label>
