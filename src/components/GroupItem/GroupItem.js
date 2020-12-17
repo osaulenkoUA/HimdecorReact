@@ -1,23 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link, Route, Switch } from 'react-router-dom';
+import ProductItem from '../ProductItem/ProductItem';
 
-const GroupItem = ({ match }) => {
+const GroupItem = ( {match,history} ) => {
 	const product = useSelector((state) => state.product.product);
 	const filtered = product.filter((item) => item.group === match.params.id);
 
-	console.log(filtered);
+	// console.log("match",match);
 
 	return (
 		<div>
-			<h1>{match.params.id}</h1>
 			{filtered.map((item) => (
 				<>
-					<Link to={item.matchurl}>
+					<Link to={`product/${item.matchurl}`}>
 						<p>{item.name}</p>
 					</Link>
 				</>
 			))}
+	      <Route path={`${match.path}/:id`} component={ProductItem} />
+
 		</div>
 	);
 };

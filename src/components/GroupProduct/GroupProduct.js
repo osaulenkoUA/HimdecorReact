@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Link, Route,Switch } from 'react-router-dom';
 import GroupItem from '../GroupItem/GroupItem.js';
 import s from './GroupProduct.module.css';
 
@@ -39,7 +39,6 @@ const groupList = [
 ];
 
 const GroupProduct = ({ match }) => {
-  console.log('GP', match);
   return (
     <div className={s.aside}>
       <ul className={s.aside__list}>
@@ -55,6 +54,7 @@ const GroupProduct = ({ match }) => {
         ))}
       </ul>
       <Route path={`${match.path}/:id`} component={GroupItem} />
+      
     </div>
   );
 };

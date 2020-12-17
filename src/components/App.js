@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import productsOperation from '../redux/products/productsOperation.js';
 import routes from '../routes.js';
 import Section from './Section/Section.js';
+import ProductItem from './ProductItem/ProductItem.js';
+
 function App() {
 	const dispatch = useDispatch();
 
