@@ -1,0 +1,256 @@
+/* @font-face {
+    font-family: 'PFDinTextPro';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/PFDinTextPro-Regular.otf');
+  }
+  @font-face {
+    font-family: 'PFDinTextPro-bold';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/PFDinTextPro-Bold.otf');
+  }
+  @font-face {
+    font-family: 'PFDinTextPro-Medium';
+    font-style: normal;
+    src: url('../fonts/PFDinTextPro-Medium.otf');
+  }
+  @font-face {
+    font-family: 'PFDinTextPro-ExtraBlack';
+    font-style: normal;
+    src: url('../fonts/PFDinTextPro-ExtraBlack.otf');
+  }
+   */
+  
+  
+ 
+
+  
+  /* -----------------productInfo----------------- */
+  .imgProduct{
+    width: 100%;
+    display: block;
+    height: auto;
+}
+  .btnBack{
+    width: 140px;
+    height: 40px;  
+    grid-row: 1/2;
+    grid-column: 1/4;
+    cursor: pointer;
+    font-family: 'PFDinTextPro';
+    text-transform: uppercase;
+    line-height: 1.429;
+    border-radius: 8px;
+    background-color: rgb(113, 179, 43);
+    color: #fff;
+    text-decoration: none;
+  }
+  .productInfo {
+    margin: 0 auto;
+    width: 300px;
+  }
+  .productInfo p,
+  .productInfo span {
+    font-family: 'PFDinTextPro';
+  }
+  .productInfo__name {
+    font-size: 20px;
+    text-align: center;
+    font-family: 'PFDinTextPro';
+    color: rgb(0, 0, 0);
+    line-height: 1.1;
+  }
+  .productInfo__weight,
+  .productInfo__sklad,
+  .productInfo__time,
+  .productInfo__vutratu,
+  .productInfo__thinner,
+  .productInfo__wereuse,
+  .productInfo__useTitle,
+  .productInfo__prepareTitle {
+    margin-top: 10px;
+    font-size: 14px;
+    font-family: 'PFDinTextPro';
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .listWeight {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 45px);
+    grid-auto-flow: column;
+    column-gap: 5px;
+  }
+  
+  .listWeight__item {
+    font-family: 'PFDinTextPro';
+    text-align: center;
+    font-size: 14px;
+    background-color: rgb(249, 246, 243);
+    border-radius: 14px;
+    color: rgb(113, 179, 43);
+    line-height: 2;
+  }
+  
+  .productInfo__skladText,
+  .productInfo__time-text,
+  .productInfo__vutratuText,
+  .productInfo__thinnerText,
+  .productInfo__wereuseText,
+  .productInfo__prepare,
+  .productInfo__use {
+    font-size: 12px;
+    color: rgb(0, 0, 0);
+    line-height: 1;
+  }
+  
+  .productInfo__links {
+    margin: 15px 0;
+    text-align: center;
+  }
+  .toBuy,
+  .sertufikat {
+    display: inline-block;
+    font-family: 'PFDinTextPro';
+    text-transform: uppercase;
+    line-height: 1.429;
+    width: 40%;
+    border-radius: 8px;
+    background-color: rgb(113, 179, 43);
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .toBuy:active,
+  .sertufikat:active {
+    background-color: lightslategray;
+  }
+  
+  .productInfo__features,
+  .productInfo__use {
+    font-size: 12px;
+    line-height: 1.143;
+    text-align: justify;
+  }
+  .productInfo__prepare p::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    display: inline-block;
+    background-color: rgb(113, 179, 43);
+    margin-right: 5px;
+  }
+  
+  /* -------------------- */
+  
+  @media (min-width: 1280px) {
+   
+  
+    /* --------------- */
+
+    .productInfo {
+      margin: 0 auto;
+      width: 100%;
+      grid-column: 2/4;
+      text-align: left;
+    }
+    .productInfo__name {
+      font-size: 30px;
+    }
+  .btnBack{
+    width: 140px;
+    height: 40px;  
+    grid-row: 1/2;
+    grid-column: 1/4;
+    cursor: pointer;
+    font-family: 'PFDinTextPro';
+    text-transform: uppercase;
+    line-height: 1.429;
+    border-radius: 8px;
+    background-color: rgb(113, 179, 43);
+    color: #fff;
+    text-decoration: none;
+  }
+    .productInfo__weight,
+    .productInfo__sklad,
+    .productInfo__time,
+    .productInfo__vutratu,
+    .productInfo__thinner,
+    .productInfo__wereuse,
+    .productInfo__useTitle,
+    .productInfo__prepareTitle {
+      font-size: 16px;
+    }
+  
+    .productInfo__skladText,
+    .productInfo__timeText,
+    .productInfo__vutratuText,
+    .productInfo__thinnerText,
+    .productInfo__wereuseText,
+    .productInfo__prepare,
+    .productInfo__use,
+    .productInfo__features {
+      font-size: 14px;
+    }
+  
+    .toBuy,
+    .sertufikat {
+      width: 30%;
+    }
+    .sertufikat {
+      margin-left: 30px;
+    }
+  
+    .product_swiper {
+      width: 1280px;
+      margin: 0 auto;
+    }
+    .swiper {
+      width: 75%;
+      min-height: 400px;
+      background-color: #f9f6f3;
+      margin-left: auto;
+    }
+    .swiper__title {
+      font-size: 18px;
+      font-family: 'PFDinTextPro';
+      color: rgb(0, 0, 0);
+      line-height: 1.333;
+      text-align: center;
+      padding-top: 30px;
+    }
+    .swiper__list {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      width: 80%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 50px;
+      margin-top: 40px;
+    }
+    
+    .productTitle {
+      font-size: 16px;
+      font-family: 'PFDinTextPro';
+      color: rgb(0, 0, 0);
+      line-height: 1.125;
+      text-align: center;
+      margin-top: 20px;
+    }
+  
+    .containetImg{
+        width: 300px;
+    }
+    .imgProduct{
+        width: 100%;
+        display: block;
+        height: auto;
+    }
+  }
+  

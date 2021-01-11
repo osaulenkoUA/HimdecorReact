@@ -1,7 +1,7 @@
 import React from 'react';
 import Article from '../../components/Article/Article';
 
-const Home = () => {
+const Home = ({match}) => {
   return (
     <div>
       <Article />

@@ -5,11 +5,10 @@ import articlesOperation from '../../redux/articles/articlesOperation.js';
 
 import s from './Article.module.css';
 
-function PhoneBookView() {
+function PhoneBookView({match}) {
   const articles = useSelector(state => state.articles.articles);
-  console.log(articles.length);
+console.log(match);
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(articlesOperation.getArticles());
   }, []);
@@ -23,7 +22,7 @@ function PhoneBookView() {
               <li key={article.title} className={s.articlItem}>
                 <img src={article.urlImage} />
                 <h3 className={s.title}>{article.title}</h3>
-                <p className={s.about}>{article.article}</p>
+                <p className={s.about}>{`${article.article.slice(0,340)}.....`}</p>
                 <button className={s.button} type="button">
                   <a href="./needKnow-inside.html"> Дивитись далі</a>
                 </button>
@@ -37,4 +36,3 @@ function PhoneBookView() {
 }
 
 export default PhoneBookView;
-

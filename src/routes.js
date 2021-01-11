@@ -25,7 +25,9 @@ export default [
     path: '/articles',
     label: 'статті',
     exact: true,
-    component: lazy(() => import('./views/Articles/ArticlesView.js')),
+    // component: lazy(() => import('./views/Articles/ArticlesView.js')),
+    component: lazy(() => import('./components/Article/Article.js')),
+
   },
   {
     path: '/gallery',

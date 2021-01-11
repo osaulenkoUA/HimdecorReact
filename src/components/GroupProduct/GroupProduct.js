@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Route,Switch } from 'react-router-dom';
+import { Link, Route, NavLink } from 'react-router-dom';
 import GroupItem from '../GroupItem/GroupItem.js';
 import s from './GroupProduct.module.css';
 
@@ -38,23 +38,24 @@ const groupList = [
   },
 ];
 
-const GroupProduct = ({ match }) => {
+const GroupProduct = ({ match, location }) => {
+  console.log('location', location);
   return (
     <div className={s.aside}>
       <ul className={s.aside__list}>
         {groupList.map(item => (
           <li className={s.aside_item} key={item.id}>
-            <Link
-              activeClassName={s.itemLink}
+            <NavLink
+              activeClassName={s.itemLinkActiv}
+              className={s.itemLink}
               to={`${match.url}/${item.id}`}
             >
               {item.name}
-            </Link>
+            </NavLink>
           </li>
         ))}
       </ul>
       <Route path={`${match.path}/:id`} component={GroupItem} />
-      
     </div>
   );
 };

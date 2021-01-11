@@ -2,26 +2,33 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Route, Switch } from 'react-router-dom';
 import ProductItem from '../ProductItem/ProductItem';
+import s from './GroupItem.module.css';
 
-const GroupItem = ( {match,history} ) => {
-	const product = useSelector((state) => state.product.product);
-	const filtered = product.filter((item) => item.group === match.params.id);
+const GroupItem = ({ match, location }) => {
+  const product = useSelector(state => state.product.product);
+  const filtered = product.filter(item => item.group === match.params.id);
+  console.log(filtered);
 
-	// console.log("match",match);
-
-	return (
-		<div>
-			{filtered.map((item) => (
-				<>
-					<Link to={`product/${item.matchurl}`}>
-						<p>{item.name}</p>
-					</Link>
-				</>
-			))}
-	      <Route path={`${match.path}/:id`} component={ProductItem} />
-
-		</div>
-	);
+  return (
+    <ul className={s.list}>
+      {filtered.map(item => (
+        <li className={s.list__item}>
+          <Link
+            style={{ textDecoration: 'none' }}
+            key={item.id}
+            to={{
+              pathname: `product/${item.matchurl}`,
+              state: { from: location },
+            }}
+          >
+            <img className={s.list__img} src={item.urlimage} />
+            <p className={s.list__name}>{item.name}</p>
+          </Link>
+        </li>
+      ))}
+      <Route path={`${match.path}/:id`} component={ProductItem} />
+    </ul>
+  );
 };
 
 export default GroupItem;
