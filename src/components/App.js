@@ -2,6 +2,7 @@ import React, { Suspense, useEffect } from 'react';
 import { BrowserRouter, Switch } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import OneArticle from './OneArticle/OneArticle.js';
 
 import productsOperation from '../redux/products/productsOperation.js';
 import routes from '../routes.js';
@@ -22,6 +23,7 @@ function App() {
 						{routes.map((route) => (
 							<Route key={route.path} {...route} />
 						))}
+						<Route path={`/articles/:id`} exact={false} component={OneArticle} />
 					</Switch>
 				</Suspense>
 			</Section>
