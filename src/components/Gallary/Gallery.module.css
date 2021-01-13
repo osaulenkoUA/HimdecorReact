@@ -1,0 +1,20 @@
+.wrapper {
+	width: 1280px;
+	background-color: rgb(175, 175, 155);
+}
+.wrapper__cards {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	column-gap: 20px;
+	row-gap: 20px;
+}
+.card {
+	/* width: 400px; */
+	/* height: 400px; */
+	/* background-color: cadetblue; */
+}
+.card img {
+	display: block;
+	overflow: hidden;
+	width: 100%;
+}

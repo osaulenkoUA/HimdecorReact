@@ -1,15 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, Route } from 'react-router-dom';
-import OneArticle from '../OneArticle/OneArticle.js';
+import { Link } from 'react-router-dom';
 import articlesOperation from '../../redux/articles/articlesOperation.js';
 
 import s from './Article.module.css';
 
-function PhoneBookView({ match,location}) {
+function PhoneBookView({ match, location }) {
 	const articles = useSelector((state) => state.articles.articles);
-  console.log(match);
-  console.log(articles);
 	const dispatch = useDispatch();
 	useEffect(() => {
 		dispatch(articlesOperation.getArticles());
@@ -38,24 +35,10 @@ function PhoneBookView({ match,location}) {
 							</li>
 						);
 					})}
-            {/* <Route path={`${match.path}/:id`}exact={false}  component={OneArticle} /> */}
 				</ul>
 			)}
-            {/* <Route path={`${match.path}/:id`} component={OneArticle} /> */}
 		</section>
 	);
 }
 
 export default PhoneBookView;
-{
-	/* <Link
-            style={{ textDecoration: 'none' }}
-            key={item.id}
-            to={{
-              pathname: `product/${item.matchurl}`,
-              state: { from: location },
-            }}
-          >
-            
-          </Link> */
-}
