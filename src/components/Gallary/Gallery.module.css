@@ -1,10 +1,16 @@
+* {
+	margin: 0;
+}
 .wrapper {
 	width: 1280px;
-	background-color: rgb(175, 175, 155);
+}
+.title {
+	font-size: 36px;
+	text-transform: uppercase;
 }
 .wrapper__cards {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
 	column-gap: 20px;
 	row-gap: 20px;
 }
@@ -13,7 +19,7 @@
 	/* height: 400px; */
 	/* background-color: cadetblue; */
 }
-.card img {
+img {
 	display: block;
 	overflow: hidden;
 	width: 100%;
