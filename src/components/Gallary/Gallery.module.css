@@ -15,12 +15,15 @@
 	row-gap: 20px;
 }
 .card {
-	/* width: 400px; */
-	/* height: 400px; */
-	/* background-color: cadetblue; */
+	width: 300px;
+	height: 300px;
+	
 }
-img {
+
+.card img {
+	object-fit: cover;
 	display: block;
 	overflow: hidden;
-	width: 100%;
+	width: 300px;
+	height: 300px;
 }
