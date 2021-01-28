@@ -21,3 +21,9 @@
 	display: block;
 	height: auto;
 }
+.close {
+	text-align: right;
+	font-size: 48px;
+	color: #ffffff;
+	cursor: pointer;
+}
