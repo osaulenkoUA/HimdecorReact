@@ -10,7 +10,7 @@ const ModalWindow = () => {
 	return (
 		<div onClick={() => dispatch(galleryActions.showModal(false))} className={s.gallary__modal}>
 			<div className={s.wrap__img}>
-				<p>X</p>
+				<p className={s.close}>X</p>
 				<img src={urlImg} alt="img" />
 			</div>
 		</div>

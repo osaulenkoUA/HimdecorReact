@@ -1,61 +1,33 @@
 import axios from 'axios';
 
-import productsActions from './productsActions';
+import galleryActions from './galleryActions.js';
 
 // axios.defaults.baseURL = 'http://localhost:3005';
 axios.defaults.baseURL = 'https://blooming-beach-72728.herokuapp.com';
 
-const addProduct = (obj) => async (dispatch) => {
-	dispatch(productsActions.addProductsRequest());
+const addGallery = (obj) => async (dispatch) => {
+	dispatch(galleryActions.addGalleryRequest());
 	console.log(obj);
 	try {
-		const { data } = await axios.post('/product/add', obj);
+		const { data } = await axios.post('/gallery/add', obj);
 		console.log(data);
-		dispatch(productsActions.addProductsSuccess(data));
+		dispatch(galleryActions.addGallerySuccess(data));
 	} catch (error) {
-		dispatch(productsActions.addProductsError(error));
+		dispatch(galleryActions.addGalleryError(error));
 	}
 };
 
-// const logIn = ({ email, password }) => async dispatch => {
-//   dispatch(authActions.logInRequest());
-//   try {
-//     const { data } = await axios.post(
-//       'https://fierce-plateau-20788.herokuapp.com/users/signin',
-//       {
-//         email,
-//         password,
-//       },
-//     );
-//     token.set(data.token);
-//     dispatch(authActions.logInSuccess(data));
-//   } catch (error) {
-//     dispatch(authActions.logInError(error));
-//   }
-// };
-
-// const logOut = () => async dispatch => {
-//   dispatch(authActions.logOutRequest());
-//   try {
-//     await axios.post('https://fierce-plateau-20788.herokuapp.com/users/logout');
-//     token.unset();
-//     dispatch(authActions.logOutSuccess());
-//   } catch (error) {
-//     dispatch(authActions.logOutError(error));
-//   }
-// };
-
-const getProduct = () => async (dispatch) => {
-	dispatch(productsActions.getProductsRequest());
+const getGallery = () => async (dispatch) => {
+	dispatch(galleryActions.getGalleryRequest());
 	try {
-		const { data } = await axios.get('/product/get');
-		dispatch(productsActions.getProductsSuccess(data));
+		const { data } = await axios.get('/gallery/get');
+		dispatch(galleryActions.getGallerySuccess(data));
 	} catch (error) {
-		dispatch(productsActions.getProductsError(error));
+		dispatch(galleryActions.getGalleryError(error));
 	}
 };
 
 export default {
-	addProduct,
-	getProduct,
+	addGallery,
+	getGallery,
 };

@@ -1,83 +1,127 @@
-.contact {
-  margin: 0 auto;
-  grid-gap: 10px;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  width: 1280px;
-  margin: 50px auto 0;
-}
-.contactMap {
-  width: 1280px;
-  margin: 0 auto;
-  text-align: center;
-  display: block;
-  margin-top: 50px;
-}
+@media (min-width: 320px) {
+	.container {
+		width: 320px;
+		margin: 0 auto;
+	}
+	.contact__picture {
+		display: none;
+	}
+	.contactMap {
+		display: none;
+	}
+	.contact {
+		margin-top: 50px;
+		margin-left: 10px;
+		display: grid;
+		grid-template-columns: 1fr;
+		row-gap: 20px;
+	}
+	.phones,
+	.emails,
+	.address,
+	.web {
+		font-family: 'PFDinTextPro';
+		font-size: 16px;
+		text-align: left;
+		display: grid;
+		grid-template-columns: 60px 1fr;
+		grid-template-rows: min-content min-content;
+		justify-self: left;
+		grid-column-gap: 5px;
+	}
+	.address_text {
+		font-family: 'PFDinTextPro';
+		font-size: 16px;
+		grid-row: 1/3;
+		align-self: center;
+	}
+	.phones::before,
+	.emails::before,
+	.address::before,
+	.web::before {
+		grid-column: 1/2;
+		grid-row: 1/3;
+		content: '';
+		display: block;
+		width: 60px;
+		height: 60px;
+		background-size: cover;
+	}
+	.phones::before {
+		background-image: url(./contacts/phone.png);
+	}
+	.emails::before {
+		background-image: url(./contacts/letter.png);
+	}
+	.address::before {
+		background-image: url(./contacts/icon.png);
+	}
+	.web::before {
+		background-image: url(./contacts/5_contacts_page.png);
+	}
+	.phones__mobile,
+	.phones__works,
+	.emails__info,
+	.emails__employer,
+	.address_text,
+	.web_text {
+		align-self: center;
+	}
 
-.phones,
-.emails,
-.address,
-.web {
-  font-family: 'PFDinTextPro';
-  font-size: 16px;
-text-align: left;
-  display: grid;
-  grid-template-columns: 90px 1fr;
-  grid-template-rows: min-content min-content;
-  justify-self: left;
-  grid-column-gap: 5px;
+	.phones,
+	.emails,
+	.address,
+	.address_text,
+	.web {
+		font-size: 20px;
+		grid-column-gap: 10px;
+	}
 }
-.address_text {
-  font-family: 'PFDinTextPro';
-  font-size: 16px;
-  grid-row: 1/3;
-  align-self: center;
-}
-.phones::before,
-.emails::before,
-.address::before,
-.web::before {
-  grid-column: 1/2;
-  grid-row: 1/3;
-  content: '';
-  display: block;
-  width: 90px;
-  height: 90px;
-}
-.phones::before {
-  background-image: url(./contacts/phone.png);
-}
-.emails::before {
-  background-image: url(./contacts/letter.png);
-}
-.address::before {
-  background-image: url(./contacts/icon.png);
-}
-.web::before {
-  background-image: url(./contacts/5_contacts_page.png);
-}
-.phones__mobile,
-.phones__works,
-.emails__info,
-.emails__employer,
-.address_text,
-.web_text {
-  align-self: center;
-}
+@media (min-width: 1024px) {
+	.container {
+		width: 1280px;
+	}
+	.contact {
+		margin: 0 auto;
+		grid-gap: 10px;
+		grid-template-rows: 1fr 1fr 1fr;
+		margin: 50px auto 0;
+	}
+	.contactMap {
+		width: 1280px;
+		margin: 0 auto;
+		text-align: center;
+		display: block;
+		margin-top: 50px;
+	}
 
-.contact__picture {
-  display: block;
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 5;
-}
-.phones,
-.emails,
-.address,
-.address_text,
-.web {
-  font-size: 20px;
-  grid-column-gap: 30px;
+	.phones,
+	.emails,
+	.address,
+	.web {
+		grid-template-columns: 90px 1fr;
+	}
+
+	.phones::before,
+	.emails::before,
+	.address::before,
+	.web::before {
+		width: 90px;
+		height: 90px;
+	}
+
+	.contact__picture {
+		display: block;
+		grid-column-start: 2;
+		grid-column-end: 3;
+		grid-row-start: 1;
+		grid-row-end: 5;
+	}
+	.phones,
+	.emails,
+	.address,
+	.address_text,
+	.web {
+		grid-column-gap: 30px;
+	}
 }
