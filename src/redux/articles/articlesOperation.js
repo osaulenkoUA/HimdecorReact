@@ -2,8 +2,8 @@ import axios from 'axios';
 
 import articlesActions from './articlesActions';
 
-// axios.defaults.baseURL = 'https://sheltered-fjord-24910.herokuapp.com';
-axios.defaults.baseURL = 'http://localhost:3005';
+// axios.defaults.baseURL = 'http://localhost:3005';
+axios.defaults.baseURL = 'https://blooming-beach-72728.herokuapp.com';
 
 const addArticle = ({ title, article, urlImage }) => async dispatch => {
   dispatch(articlesActions.addArticlesRequest());

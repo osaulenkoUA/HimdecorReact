@@ -2,8 +2,8 @@ import axios from 'axios';
 
 import productsActions from './productsActions';
 
-// axios.defaults.baseURL = 'https://sheltered-fjord-24910.herokuapp.com';
-axios.defaults.baseURL = 'http://localhost:3005';
+// axios.defaults.baseURL = 'http://localhost:3005';
+axios.defaults.baseURL = 'https://blooming-beach-72728.herokuapp.com';
 
 const addProduct = (obj) => async (dispatch) => {
 	dispatch(productsActions.addProductsRequest());
