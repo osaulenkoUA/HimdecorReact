@@ -1,63 +1,34 @@
 import React from 'react';
 import { Link, Route, NavLink } from 'react-router-dom';
 import GroupItem from '../GroupItem/GroupItem.js';
-import s from './GroupProduct.module.css';
+import BarsOfGroup from './BarsOfGroup.js';
 
-const groupList = [
-  {
-    id: 'клей-пва',
-    name: 'клей',
-  },
-  {
-    id: 'інтерєрні-фарби',
-    name: 'інтер`єрні фарби',
-  },
-  {
-    id: 'фасадні-фарби',
-    name: 'фасадні фарби',
-  },
-  {
-    id: 'грунтівка',
-    name: 'грунтівки',
-  },
-  {
-    id: 'декоративні-фарби',
-    name: 'декоративні та по дереву',
-  },
-  {
-    id: 'лаки-акрилові',
-    name: 'лаки та лазурі',
-  },
-  {
-    id: 'шпатлівки-по-дереву',
-    name: 'акрилова шпаклівка',
-  },
-  {
-    id: 'декоративні-штукатурки',
-    name: 'декоративні штукатурки',
-  },
-];
+import s from './GroupProduct.module.css';
+import groupList from './groupList.js';
 
 const GroupProduct = ({ match, location }) => {
-  console.log('location', location);
-  return (
-    <div className={s.aside}>
-      <ul className={s.aside__list}>
-        {groupList.map(item => (
-          <li className={s.aside_item} key={item.id}>
-            <NavLink
-              activeClassName={s.itemLinkActiv}
-              className={s.itemLink}
-              to={`${match.url}/${item.id}`}
-            >
-              {item.name}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
-      <Route path={`${match.path}/:id`} component={GroupItem} />
-    </div>
-  );
+	const offsetWidth = Number(document.documentElement.offsetWidth);
+	const widthScreen = offsetWidth >= 1280;
+
+	return (
+		<div className={s.aside}>
+			<ul className={s.aside__list}>
+				{groupList.map((item) => (
+					<li className={s.aside_item} key={item.id}>
+						<NavLink
+							activeClassName={s.itemLinkActiv}
+							className={s.itemLink}
+							to={`${match.url}/${item.id}`}
+						>
+							{item.name}
+						</NavLink>
+					</li>
+				))}
+			</ul>
+			<Route path={`${match.path}/:id`} component={GroupItem} />
+			{location.pathname === '/uk/shop' && widthScreen && <BarsOfGroup />}
+		</div>
+	);
 };
 
 export default GroupProduct;
