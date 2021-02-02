@@ -1,0 +1,9 @@
+.wrapSvg {
+    cursor: pointer;
+	width: max-content;
+	display: grid;
+	grid-template-columns: min-content min-content;
+	align-items: center;
+	column-gap: 10px;
+	margin-left: auto;
+}

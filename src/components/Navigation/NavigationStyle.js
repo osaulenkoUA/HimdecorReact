@@ -2,7 +2,7 @@ const header = {
 	link: {
 		display: 'inline-block',
 		textDecoration: 'none',
-		padding: 12,
+		padding: 6,
 		fontWeight: 700,
     color: '#2A363B',
     ":hover": {color:"green"} 

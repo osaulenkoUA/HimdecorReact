@@ -1,15 +1,14 @@
 import React from 'react';
-import { Link, Route, NavLink } from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
 import GroupItem from '../GroupItem/GroupItem.js';
 import BarsOfGroup from './BarsOfGroup.js';
+import { isMobileScreen } from '../helpers/wideScreen.js';
 
 import s from './GroupProduct.module.css';
 import groupList from './groupList.js';
 
 const GroupProduct = ({ match, location }) => {
-	const offsetWidth = Number(document.documentElement.offsetWidth);
-	const widthScreen = offsetWidth >= 1280;
-
+	const mobileScreen = isMobileScreen();
 	return (
 		<div className={s.aside}>
 			<ul className={s.aside__list}>
@@ -26,7 +25,7 @@ const GroupProduct = ({ match, location }) => {
 				))}
 			</ul>
 			<Route path={`${match.path}/:id`} component={GroupItem} />
-			{location.pathname === '/uk/shop' && widthScreen && <BarsOfGroup />}
+			{location.pathname === '/uk/shop' && mobileScreen && <BarsOfGroup />}
 		</div>
 	);
 };

@@ -26,6 +26,8 @@
 	
 .list__item{
   border: none;
+  background-color: transparent;
+  border-radius: 0;
 }
 	
 }

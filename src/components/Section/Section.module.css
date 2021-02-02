@@ -5,14 +5,20 @@
 }
 
 .container {
+  width: 320px;
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: min-content 1fr min-content;
   font-family: 'roboto';
-  width: 1280px;
   margin: 0 auto;
   text-align: center;
   padding-bottom: 5px;
 }
 
+@media (min-width: 1280px){
+  .container {
+    grid-template-rows: min-content 1fr min-content;
+    width: 1280px;
+  }
+}

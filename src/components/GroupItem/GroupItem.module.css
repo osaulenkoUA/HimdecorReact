@@ -11,6 +11,8 @@
 .list__item {
 	cursor: pointer;
 	box-shadow: 10px 6px 17px -1px #000000;
+	background-color: #ffffff;
+	border-radius: 20px;
 }
 
 .list__img {

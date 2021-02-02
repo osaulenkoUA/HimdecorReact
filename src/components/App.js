@@ -9,6 +9,8 @@ import routes from '../routes.js';
 import Section from './Section/Section.js';
 import ProductItem from './ProductItem/ProductItem.js';
 
+import './App.module.css';
+
 function App() {
 	const dispatch = useDispatch();
 
