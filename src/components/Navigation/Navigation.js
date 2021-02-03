@@ -7,40 +7,48 @@ import routes from '../../routes.js';
 import { isMobileScreen } from '../helpers/wideScreen.js';
 
 const Navigation = ({ menu }) => {
-	const mobileScreen = isMobileScreen();
-	const [isShowNav, setIsShowNav] = useState(true);
+  const mobileScreen = isMobileScreen();
+  const [isShowNav, setIsShowNav] = useState(true);
 
-	useEffect(() => {
-		if (!mobileScreen) setIsShowNav(false);
-	}, []);
+  useEffect(() => {
+    if (!mobileScreen) setIsShowNav(false);
+  }, []);
 
-	function onHandleHideMenu() {
-		setIsShowNav((prevState) => !prevState);
-	}
+  function onHandleHideMenu() {
+    setIsShowNav(prevState => !prevState);
+  }
 
-	return (
-		<div>
-			{!mobileScreen && <DropMenu onHandleHideMenu={onHandleHideMenu} />}
-			{isShowNav && (
-				<nav className={s.list}>
-					{routes.map((route) => (
-						<div className={s.list__item}>
-							<NavLink
-								exact={route.exact}
-								key={route.label}
-								to={route.path}
-								style={menu === 'footer' ? styles.footer.link : styles.header.link}
-								activeStyle={styles.header.activeLink}
-								className={s.nav}
-							>
-								{route.label}
-							</NavLink>
-						</div>
-					))}
-				</nav>
-			)}
-		</div>
-	);
+  return (
+    <div>
+      {!mobileScreen && <DropMenu onHandleHideMenu={onHandleHideMenu} />}
+      {isShowNav && (
+        <nav className={s.list}>
+          {routes.map(route => {
+            if (route.isShowNav) {
+              return (
+                <div className={s.list__item}>
+                  <NavLink
+                    exact={route.exact}
+                    key={route.label}
+                    to={route.path}
+                    style={
+                      menu === 'footer'
+                        ? styles.footer.link
+                        : styles.header.link
+                    }
+                    activeStyle={styles.header.activeLink}
+                    className={s.nav}
+                  >
+                    {route.label}
+                  </NavLink>
+                </div>
+              );
+            }
+          })}
+        </nav>
+      )}
+    </div>
+  );
 };
 
 export default Navigation;

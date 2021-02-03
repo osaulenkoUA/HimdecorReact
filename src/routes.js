@@ -2,9 +2,10 @@ import { lazy } from 'react';
 
 export default [
 	{
-		path: '/',
+		path: '/about',
 		label: 'про компанію',
 		exact: true,
+		isShowNav:true,
 		component: lazy(() => import('./views/About/AboutView.js')),
 	},
 	{
@@ -12,12 +13,14 @@ export default [
 		label: 'продукція',
 		exact: false,
 		// component: lazy(() => import('./views/Products/ProductsView.js')),
+		isShowNav:true,
 		component: lazy(() => import('./components/GroupProduct/GroupProduct')),
 	},
 	{
 		path: '/price',
 		label: 'прайс',
 		exact: true,
+		isShowNav:true,
 		component: lazy(() => import('./views/Price/PriceView.js')),
 	},
 	{
@@ -25,36 +28,49 @@ export default [
 		label: 'статті',
 		exact: true,
 		// component: lazy(() => import('./views/Articles/ArticlesView.js')),
+		isShowNav:true,
 		component: lazy(() => import('./components/Article/Article.js')),
 	},
 	{
 		path: '/gallery',
 		label: 'галерея',
 		exact: true,
+		isShowNav:true,
 		component: lazy(() => import('./views/Gallery/GalleryView.js')),
 	},
 	{
 		path: '/contacts',
 		label: 'контакти',
 		exact: true,
+		isShowNav:true,
 		component: lazy(() => import('./views/Contact/ContactView.js')),
 	},
 	{
 		path: '/addarticles',
 		label: 'addArticles',
 		exact: true,
+		isShowNav:false,
 		component: lazy(() => import('./views/AddArticle/AddArticleView.js')),
 	},
 	{
 		path: '/addproduct',
 		label: 'addproduct',
 		exact: true,
+		isShowNav:false,
 		component: lazy(() => import('./views/AddProduct/AddProductView.js')),
 	},
 	{
 		path: '/addGallery',
 		label: 'addGallery',
 		exact: true,
+		isShowNav:false,
 		component: lazy(() => import('./views/AddGallery/AddGalleryView.js')),
+	},
+	{
+		path: '/admin',
+		label: 'admin',
+		exact: true,
+		isShowNav:false,
+		component: lazy(() => import('./views/Admin/Admin.js')),
 	},
 ];
