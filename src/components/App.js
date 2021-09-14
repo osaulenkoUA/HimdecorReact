@@ -9,6 +9,7 @@ import routes from '../routes.js';
 import Section from './Section/Section.js';
 
 import './App.module.css';
+import AddProductView from "../views/AddProduct/AddProductView";
 
 function App() {
   const pathForEnterAdmin = window.location.pathname === '/admin';
@@ -32,10 +33,11 @@ function App() {
                 exact={false}
                 component={OneArticle}
               />
+              <Route path={'/add'} exact={false} component={AddProductView}/>
             </Switch>
           </Suspense>
         </Section>
-      )}
+      )}8
       {pathForEnterAdmin && (
         <Suspense fallback={<h1>Loading...</h1>}>
           <Switch>
@@ -46,6 +48,7 @@ function App() {
           </Switch>
         </Suspense>
       )}
+
     </BrowserRouter>
   );
 }

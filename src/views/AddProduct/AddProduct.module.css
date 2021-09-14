@@ -17,13 +17,19 @@
   padding-left: 10px;
   border: 1px solid rgb(156, 156, 156);
   border-radius: 3px;
+  font-size: 20px;
 }
 
 .form__input:focus {
   outline: 1px solid rgb(50, 90, 223);
 }
+.form__label textarea{
+  font-size: 20px;
+  width: 100%;
 
+}
 .form__label {
+
   width: 75%;
   text-align: left;
   font-size: 20px;
@@ -72,4 +78,46 @@
 
   transform: translateX(-70%);
   transition: all 350ms linear;
+}
+
+
+.priceWeight{
+  display: grid;
+grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+}
+
+.row{
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 70px;
+  row-gap: 20px;
+  align-items: center;
+  align-content: center;
+}
+.row button{
+  cursor: pointer;
+  /*height: 40px;*/
+  font-size: 40px;
+  line-height: 1;
+  width: 45px;
+  border-radius: 10px;
+  background-color: #50a426;
+color: white;
+}
+
+.row button:hover{
+  background-color: white;
+  color: black;
+}
+
+.second{
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.select{
+  height: 60px;
+  font-size: 20px;
+  padding: 10px;
 }

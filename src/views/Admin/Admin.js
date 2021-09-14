@@ -10,7 +10,7 @@ const Admin = () => {
   const currentDay = date.getDate();
   const pass = currentDay + 'dlink500';
   const [inputVal, setInputVal] = useState('');
-  const [isShowAdminNav, setIsShowAdminNav] = useState(false);
+  const [isShowAdminNav, setIsShowAdminNav] = useState(true);
 
   function onHandleClick(e) {
     const key = e.key === 'Enter';
