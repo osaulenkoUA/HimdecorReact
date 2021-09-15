@@ -1,44 +1,55 @@
 import React, {useState} from 'react';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 
 import s from './AddProduct.module.css';
 import productsOperation from "../../redux/products/productsOperation";
 
+
 function AddArticle() {
-   const [inputs, setInputs] = useState([1]);
+
+    const [inputs, setInputs] = useState([1]);
+
+
+    const isAdded = useSelector(state => state.product.isAdded);
+
+
     const dispatch = useDispatch();
 
     function handleSubmit(e) {
+        window.scrollTo({top: 0,});
         e.preventDefault();
-        const data=new FormData(e.currentTarget);
-        let objectWithFields={};
+        const data = new FormData(e.currentTarget);
+        let objectWithFields = {};
         for (let [key, value] of data.entries()) {
-            if (key==="weight"|| key==="price") continue;
-            const current={[key]:value};
-            objectWithFields=Object.assign(objectWithFields,current)
+            if (key === "weight" || key === "price") continue;
+            const current = {[key]: value};
+            objectWithFields = Object.assign(objectWithFields, current)
         }
-        const arrW=data.getAll('weight');
-        const arrP=data.getAll("price");
+        const arrW = data.getAll('weight');
+        const arrP = data.getAll("price");
 
-const features=arrW.map((el,idx)=>{
-    return{
-        weight:el,
-        price:arrP[idx]
-    }
-})
-        const objForDispath={...objectWithFields,features}
+        const features = arrW.map((el, idx) => {
+            return {
+                weight: el,
+                price: arrP[idx]
+            }
+        })
+        const objForDispath = {...objectWithFields, features}
         dispatch(productsOperation.addProduct(objForDispath));
-        setTimeout(()=>window.location.reload(),3000);
+
     }
 
 
-
+    if (isAdded) {
+        alert('ТОАВАР ДОБАВЛЕНИЙ');
+        window.location.reload();
+    }
     return (
 
         <div>
             <h2>Добавити продукт - Адмін ДЕМО Панель</h2>
             <form onSubmit={handleSubmit} className={s.form}>
-                <select className={s.select} name="group">
+                <select  className={s.select} name="group">
                     <option value="0">Вибрати ГРУПУ:</option>
                     <option value="клей-пва">клей-пва</option>
                     <option value="інтерєрні-фарби">інтерєрні-фарби</option>
@@ -167,7 +178,7 @@ const features=arrW.map((el,idx)=>{
                     Підготовка:
                     <textarea
                         rows="8" cols="85"
-                              name="pidgotovka"/>
+                        name="pidgotovka"/>
                 </label>
                 <label className={s.form__label}>
                     Посилання ДЕ купити:

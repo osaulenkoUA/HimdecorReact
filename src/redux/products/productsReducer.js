@@ -11,5 +11,9 @@ const product = createReducer(initialState, {
   [productsActions.addProductsSuccess]: addProduct,
   [productsActions.getProductsSuccess]: getProduct,
 });
+const isAdded=createReducer(false,{
+  [productsActions.addProductsRequest]:()=>false,
+  [productsActions.addProductsSuccess]:()=>true,
+})
 
-export default combineReducers({ product });
+export default combineReducers({ product,isAdded });
